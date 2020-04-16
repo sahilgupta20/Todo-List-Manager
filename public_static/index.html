@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script async defer src="script.js"></script>
+    <script async defer src="jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Task Manager</title>
+</head>
+<body class="main" onload="getData()">
+    <img class="image_nag" src="./nagarro.jpg"/>
+    <h1 class="todo">Todo list manager</h1>
+    <label>Title<span style="color : red">*</span> : </label>
+    <input type="text" id="title">
+
+    <br />
+
+    <label class="label">Due :<span style="color : red">*</span> </label>
+    <input type="date" id="due">
+    <br>
+    
+    <label>Description : </label>
+    <input type="text" id="description">
+    <br>
+
+    <label style="margin-left: 500px">Priority:<span style="color : red">*</span> </label>
+    <select id="priority">
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+        <option value="High">High</option>
+    </select>
+    <br />
+    <label>Note : </label>
+    <input type="text" id="note" style="width : 70%">
+    <input type="button" value="Add Task" id="btn">
+    <p id='err'></p>
+    <br />
+    <center>
+        <label>Sort by:<span style="color : red">*</span> </label>
+        <select id="sort">
+            <option value="due">Due date</option>
+            <option value="status">Status</option>
+            <option value="priority">Priority</option>
+        </select>
+    </center>
+     <br />
+
+     <table id="table">
+
+        <tr>
+            <th>Index</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Priority</th>
+
+        </tr>
+                
+           <tr>
+            <td>1</td>
+            <td>Good Morning</td>
+            <td>Early Rise is benificial</td>
+            <td>2020-04-14</td>
+            <td>Incomplete</td>
+            <td>High</td>
+            
+        </tr>
+        <tr class="notes" style="display: table-row;">
+            <td colspan="6">
+                <ul>
+                    <li>Morning Exercise is important.</li>
+                    <li>Brush your Teeth</li>
+                </ul>
+                <input type="text" id="1_input">
+                <input type="button" value="Add Note">
+                <button class="editButton">Edit</button>
+            </td>
+        </tr>
+
+ 
+
+        <tr>
+            <td>2</td>
+            <td>Breakfast</td>
+            <td></td>
+            <td>2020-04-14</td>
+            <td>Incomplete</td>
+            <td>Medium</td>
+        </tr>
+
+ 
+
+        <tr class="notes">
+            <td colspan="6">
+                <ul>
+                    <li>Healthy breakfast keeps your body fit.</li>
+                </ul>
+                <input type="text" id="2_input">
+                <input type="button" value="Add Note">
+                <button class="editButton">Edit</button>
+            </td>
+        </tr>
+
+ 
+
+        <tr>
+            <td>3</td>
+            <td>Lunch</td>
+            <td>Green Veggies are nutricious.</td>
+            <td>2020-04-14</td>
+            <td>Complete</td>
+            <td>low</td>
+        </tr>
+
+ 
+
+        <tr class="notes">
+            <td colspan="6">
+                <ul>
+                    <li>There are few things to be kept in mind.</li>
+                    <li>This is Done and Over</li>
+                    
+                </ul>
+                <input type="text" id="4_input">
+                <input type="button" value="Add Note">
+                <button class="editButton">Edit</button>
+            </td>
+        </tr>
+
+       </table>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class='editHeader'>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div style="padding : 20px;">
+                        <label>Title<span style="color : red">*</span> : </label>
+                        <input type="text" id="editTitle" style="color : gray" readonly>
+                        <label>Description : </label>
+                        <input type="text" id="editDescription" style="color : gray" readonly>
+                        <br />
+                        <label>Due :<span style="color : red">*</span> </label>
+                        <input type="Date" id="editDue">
+                        <label>Priority:<span style="color : red">*</span> </label>
+                        <select id="editPriority">
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+                        <label class="container">
+                            Completed :
+                            <input type="checkbox" id="editStatuss" >
+                            <span class="checkmark"></span>
+                        </label>
+                        <input type="button" value="Save" id="saveBtn">
+                    </div>
+                </div>
+
+ 
+
+            </div>
+</body>
+</html>
