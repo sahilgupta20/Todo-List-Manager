@@ -16,7 +16,8 @@ route.use(function(req, res, next) {
 
 route.use(express.static(__dirname + "/public_static"))
 //route.use("/todos", todoRoute)
-route.set("port", (process.env.PORT || 3999))
+//route.set("port", (process.env.PORT || 3999))
+const port = process.env.PORT || 3999
 
 
 
