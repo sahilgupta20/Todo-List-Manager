@@ -159,7 +159,7 @@ route.patch("/todo/:id", (req,res)=>{
 
 
 db.sync().then(()=> {
-    route.listen(route.get("port"))
+    route.listen(port)
 }).catch((err)=>{
     console.log(err)
 })
